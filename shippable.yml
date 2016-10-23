@@ -1,0 +1,8 @@
+language: none
+build:
+  pre_ci_boot:
+    image: busybox
+  pre_ci:
+    - sudo docker build -t sxmichael/shippable-u14pytall-es2 .
+  post_ci:
+    - sudo docker push sxmichael/shippable-u14pytall-es2
