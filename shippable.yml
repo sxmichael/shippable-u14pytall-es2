@@ -4,6 +4,9 @@ integrations:
       - integrationName: docker
         type: docker    
 build:
-  post_ci:
+  pre_ci_boot:
+    image: busybox
+  pre_ci:
     - docker build -t sxmichael/shippable-u14pytall-es2 .
+  post_ci:
     - docker push sxmichael/shippable-u14pytall-es2
